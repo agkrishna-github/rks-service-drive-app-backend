@@ -10,6 +10,7 @@ const driverRoute = require("./routes/driverRoute");
 const authRoute = require("./routes/authRoute");
 const vehicleRoute = require("./routes/vehicleRoute");
 const imageRoute = require("./routes/imageRoute");
+const dropRoute = require("./routes/dropRoute");
 const servicePickupRoute = require("./routes/servicePickupRoute");
 
 connectDB();
@@ -22,7 +23,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/vehicle", vehicleRoute);
 app.use("/api/v1/pickUpData", servicePickupRoute);
 app.use("/api/v1/image", imageRoute);
-app.use("/api/v1/image", imageRoute);
+app.use("/api/v1/dropData", dropRoute);
 // app.use("/api/v1/uploadImg", imageRouter);
 // app.use("/api/v1/deliveryVehicle", deliveryVehicleRouter);
 
