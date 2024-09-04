@@ -21,7 +21,7 @@ const uploadImages = async (req, res) => {
       return file;
     });
 
-    res.status(201).json(images);
+    res.status(201).send({ images, success: true });
   } catch (error) {
     throw new Error(error);
   }
@@ -32,7 +32,7 @@ const deleteImage = async (req, res) => {
   try {
     const deleted = cloudinaryDeleteImg(id, "images");
 
-    res.status(201).json({ id, message: "Deleted" });
+    res.status(201).send({ id, message: "Deleted" });
   } catch (error) {
     throw new Error(error);
   }
