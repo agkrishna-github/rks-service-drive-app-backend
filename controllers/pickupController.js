@@ -6,7 +6,7 @@ const addPickupController = async (req, res) => {
     const newPickup = await PickUpModel.create(req.body);
     console.log("newpickup", newPickup);
     if (newPickup) {
-      res.status(201).send({
+      res.status(200).send({
         success: true,
         newPickup,
         message: "New pickup created successfulyy",

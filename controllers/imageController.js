@@ -21,7 +21,9 @@ const uploadImages = async (req, res) => {
       return file;
     });
 
-    res.status(201).send({ images, success: true });
+    console.log(images);
+
+    res.status(200).json({ images, success: true });
   } catch (error) {
     throw new Error(error);
   }
