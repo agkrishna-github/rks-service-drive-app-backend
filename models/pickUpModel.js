@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const pickUpSchema = new mongoose.Schema(
   {
-    images: [],
+    workShopImages: [],
+    vehImages: [],
     pickUpData: {},
   },
   {
