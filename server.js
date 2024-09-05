@@ -15,8 +15,11 @@ const servicePickupRoute = require("./routes/servicePickupRoute");
 
 connectDB();
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+/* app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false })); */
+
+app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/v1/driver", driverRoute);
 app.use("/api/v1/auth", authRoute);

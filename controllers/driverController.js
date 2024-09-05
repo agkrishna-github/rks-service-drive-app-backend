@@ -26,7 +26,7 @@ const addDriverController = async (req, res) => {
   try {
     const newDriver = await Driver.create(driverObject);
     if (newDriver) {
-      res.status(200).send({
+      res.status(200).json({
         success: true,
         newDriver,
         message: "New Driver Added Successfully",
@@ -34,7 +34,7 @@ const addDriverController = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(400).send({
+    res.status(400).json({
       success: false,
       message: "Error in add driver details",
       error,
@@ -46,7 +46,7 @@ const getDriversController = async (req, res) => {
   try {
     const allDrivers = await Driver.find({});
     if (allDrivers) {
-      res.status(200).send({
+      res.status(200).json({
         success: true,
         allDrivers,
         message: "Fetched Drivers data Successfully",
@@ -54,7 +54,7 @@ const getDriversController = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(400).send({
+    res.status(400).json({
       success: false,
       message: "Error in fetching  drivers data",
       error,
@@ -96,7 +96,7 @@ const loginDriverController = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    res.status(201).send({
+    res.status(201).json({
       accessToken,
       driver: foundDriver.empFirstName,
       id: foundDriver._id,
@@ -105,7 +105,7 @@ const loginDriverController = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.status(400).send({
+    res.status(400).json({
       success: false,
       message: "Error in fetching  drivers data",
       error,

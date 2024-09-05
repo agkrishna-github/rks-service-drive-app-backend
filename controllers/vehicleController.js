@@ -7,7 +7,7 @@ const getVehicleController = async (req, res) => {
     const foundVehicle = await Vehicle.findOne({ regNum });
     console.log("found vehcle", foundVehicle);
     if (foundVehicle) {
-      res.status(200).send({
+      res.status(200).json({
         success: true,
         foundVehicle,
         message: "Fetched Vehicle data Successfully",
@@ -15,7 +15,7 @@ const getVehicleController = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(400).send({
+    res.status(400).json({
       success: false,
       message: "Error in fetching  drivers data",
       error,

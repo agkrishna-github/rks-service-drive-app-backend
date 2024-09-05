@@ -6,7 +6,7 @@ const addDropController = async (req, res) => {
     const newDrop = await DropModel.create(req.body);
     console.log("new drop", newDrop);
     if (newDrop) {
-      res.status(201).send({
+      res.status(201).json({
         success: true,
         newDrop,
         message: "New Drop created successfulyy",
@@ -14,7 +14,7 @@ const addDropController = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(400).send({
+    res.status(400).json({
       success: false,
       message: "Error in fetching  drivers data",
       error,

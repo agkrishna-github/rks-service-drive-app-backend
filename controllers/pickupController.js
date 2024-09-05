@@ -6,7 +6,7 @@ const addPickupController = async (req, res) => {
     const newPickup = await PickUpModel.create(req.body);
     console.log("newpickup", newPickup);
     if (newPickup) {
-      res.status(200).send({
+      res.status(200).json({
         success: true,
         newPickup,
         message: "New pickup created successfulyy",
@@ -14,7 +14,7 @@ const addPickupController = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(400).send({
+    res.status(400).json({
       success: false,
       message: "Error in fetching  drivers data",
       error,
