@@ -4,6 +4,8 @@ const app = express();
 const connectDB = require("./confing/dbConn");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+
 const PORT = process.env.PORT || 8090;
 const cors = require("cors");
 const driverRoute = require("./routes/driverRoute");
