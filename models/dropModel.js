@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 
 const dropSchema = new mongoose.Schema(
   {
-    images: [],
+    customerImage: {
+      type: String,
+      required: true,
+    },
+    vehImages: [],
     dropData: {},
   },
   {
